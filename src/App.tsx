@@ -6,7 +6,7 @@ import React, {
   useState
 } from "react";
 import { v1 as uuid } from "uuid";
-import { Todo } from "../type";
+import { Todo } from "./type";
 import "./App.css";
 
 const todos: Todo[] = [
