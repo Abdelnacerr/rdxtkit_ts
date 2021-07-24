@@ -1,0 +1,8 @@
+// nts
+export enum ActionType {
+    CREATE_TODO = "CREATE_TODO",
+    EDIT_TODO = "EDIT_TODO",
+    TOGGLE_TODO = "TOGGLE_TODO",
+    DELETE_TODO = "DELETE_TODO",
+    SELECT_TODO = "SELECT_TODO",
+}
