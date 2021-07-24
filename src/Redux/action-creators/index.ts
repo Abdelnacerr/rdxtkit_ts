@@ -1,5 +1,4 @@
 import { ActionType } from "../action-types-constants";
-import { Action } from '../actions'
 import { v1 as uuid } from "uuid";
 
 export const createTodoActionCreator = ({ desc }: { desc: string; }) => {

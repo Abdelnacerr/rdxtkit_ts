@@ -104,8 +104,7 @@ const App = () => {
 				</form>
 			</div>
 
-      <div className='App__body'>
-        
+			<div className='App__body'>
 				<ul className='App__list'>
 					<h2>My Todos:</h2>
 					{todos.map((todo, i) => (

@@ -1,6 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { applyMiddleware, createStore, compose } from "redux";
+import allReducers from "./Reducers";
+import thunk from "redux-thunk";
+import logger from "redux-logger";
 
-// import rootReducer from './reducers'
-
-// const store = configureStore({ reducer: rootReducer })
-// The store now has redux-thunk added and the Redux DevTools Extension is turned on
+export const store = createStore(
+	allReducers,
+	{},
+	compose(
+		applyMiddleware(thunk, logger),
+		(window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
+			(window as any).__REDUX_DEVTOOLS_EXTENSION__()
+	)
+);
