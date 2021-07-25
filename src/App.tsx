@@ -9,13 +9,23 @@ import { State } from "./type";
 import "./App.css";
 
 import { useSelector, useDispatch } from "react-redux";
+
+// import {
+// 	createTodoActionCreator,
+// 	EditTodoActionCreator,
+// 	deleteTodoActionCreator,
+// 	toggleTodoActionCreator,
+// 	selectTodoActionCreator,
+// } from "./Redux/action-creators";//
+
 import {
 	createTodoActionCreator,
-	EditTodoActionCreator,
+	editTodoActionCreator,
 	deleteTodoActionCreator,
 	toggleTodoActionCreator,
-	selectTodoActionCreator,
-} from "./Redux/action-creators";
+} from "./features/todoSlice";
+
+import { selectTodoActionCreator } from "./features/selectedTodoSlice";
 
 const App = () => {
 	const dispatch = useDispatch();
@@ -72,7 +82,7 @@ const App = () => {
 			return;
 		}
 		dispatch(
-			EditTodoActionCreator({ id: selectedTodoId, desc: editTodoInput })
+			editTodoActionCreator({ id: selectedTodoId, desc: editTodoInput })
 		);
 		setIsEditMode(false);
 		setEditTodoInput("");
